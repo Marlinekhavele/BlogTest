@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'blog2.urls'
+ROOT_URLCONF = 'bucket.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog2.wsgi.application'
+WSGI_APPLICATION = 'bucket.wsgi.application'
 
 
 # Database
