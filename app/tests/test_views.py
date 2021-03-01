@@ -1,6 +1,9 @@
+from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework import status
-from django.core.urlresolvers import reverse
+from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 # Define this after the ModelTestCase
 class ViewTestCase(TestCase):
@@ -47,7 +50,7 @@ class ViewTestCase(TestCase):
         )
         self.assertEqual(res.status_code, status.HTTP_200_OK)
 
-        
+
     def test_api_can_delete_bucketlist(self):
         """Test the api can delete a bucketlist."""
         bucketlist = Bucketlist.objects.get()

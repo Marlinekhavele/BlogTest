@@ -1,16 +1,16 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics,permissions
+from .permissions import IsOwner
 from django_filters import rest_framework as filters
 from .serializers import BucketlistSerializer
 from .models import Bucketlist
-from rest_framework import permissions
 
 
 
 class CreateView(generics.ListCreateAPIView):
     queryset = Bucketlist.objects.all()
     serializer_class = BucketlistSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,IsOwner)
 
     def perform_create(self, serializer):
         """Save the post data when creating a new bucketlist."""
@@ -23,3 +23,5 @@ class ListView(generics.ListAPIView):
 class DetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bucketlist.objects.all()
     serializer_class = BucketlistSerializer
+    permission_classes = (permissions.IsAuthenticated,IsOwner)
+
