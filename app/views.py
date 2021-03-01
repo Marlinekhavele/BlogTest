@@ -6,7 +6,6 @@ from .models import Bucketlist
 
 
 class CreateView(generics.ListCreateAPIView):
-    """This class defines the create behavior of our rest api."""
     queryset = Bucketlist.objects.all()
     serializer_class = BucketlistSerializer
 
@@ -15,5 +14,9 @@ class CreateView(generics.ListCreateAPIView):
         serializer.save()
 
 class ListView(generics.ListAPIView):
+    queryset = Bucketlist.objects.all()
+    serializer_class = BucketlistSerializer
+
+class DetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Bucketlist.objects.all()
     serializer_class = BucketlistSerializer
