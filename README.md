@@ -2,10 +2,9 @@
 - A REST api written in Django
 #### Installation
 - git clone 
-- pip install virtualenv
 - Cd into your the cloned repo as such:
- -  cd bucket
-- Create and activate up your virtual environment:
+    -  cd bucket
+#### Create and activate up your virtual environment:
     -  virtualenv  venv -p python3
     -  source env/bin/activate
 #### Install dependencies
